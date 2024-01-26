@@ -7,7 +7,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int value = 0;
+  int value_1 = 0;
+  int value_2 = 0;
+
+  int get sum => value_1 + value_2;
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +29,10 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Value',
+              'Số thứ 1',
               style: TextStyle(
                 fontSize: 24,
-                color: Color.fromARGB(255, 184, 8, 8),
+                color: Color.fromARGB(255, 111, 1, 255),
               ),
             ),
             Row(
@@ -38,14 +41,14 @@ class _HomePageState extends State<HomePage> {
                 IconButton(
                   onPressed: () {
                     setState(() {
-                      value--;
+                      value_1--;
                     });
                   },
                   icon: const Icon(Icons.remove),
                 ),
                 const SizedBox(width: 10),
                 Text(
-                  '$value',
+                  '$value_1',
                   style: const TextStyle(
                     fontSize: 24,
                     color: Color.fromARGB(255, 184, 8, 8),
@@ -55,13 +58,57 @@ class _HomePageState extends State<HomePage> {
                 IconButton(
                   onPressed: () {
                     setState(() {
-                      value++;
+                      value_1++;
                     });
                   },
                   icon: const Icon(Icons.add),
                 ),
               ],
-            )
+            ),
+            const Text(
+              'Số thứ 2',
+              style: TextStyle(
+                fontSize: 24,
+                color: Color.fromARGB(255, 111, 1, 255),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: () {
+                    setState(() {
+                      value_2--;
+                    });
+                  },
+                  icon: const Icon(Icons.remove),
+                ),
+                const SizedBox(width: 10),
+                Text(
+                  '$value_2',
+                  style: const TextStyle(
+                    fontSize: 24,
+                    color: Color.fromARGB(255, 184, 8, 8),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                IconButton(
+                  onPressed: () {
+                    setState(() {
+                      value_2++;
+                    });
+                  },
+                  icon: const Icon(Icons.add),
+                ),
+              ],
+            ),
+            Text(
+              'Tổng số thứ 1 và số thứ 2 = $sum',
+              style: const TextStyle(
+                fontSize: 24,
+                color: Color.fromARGB(255, 111, 1, 255),
+              ),
+            ),
           ],
         ),
       ),
