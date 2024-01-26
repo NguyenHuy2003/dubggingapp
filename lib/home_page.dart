@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.control_point),
+        leading: const Icon(Icons.app_registration),
         title: const Text("My App"),
         backgroundColor: Color.fromARGB(38, 0, 70, 22),
         actions: const [
